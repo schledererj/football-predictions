@@ -1,0 +1,46 @@
+Columns
+=======
+id
+,target
+,home_team_name
+,away_team_name
+,match_date
+,league_name
+,league_id
+,is_cup
+,home_team_coach_id
+,away_team_coach_id
+,home_team_history_match_date_1
+,home_team_history_is_play_home_1
+,home_team_history_is_cup_1
+,home_team_history_goal_1
+,home_team_history_opponent_goal_1
+,home_team_history_rating_1
+,home_team_history_opponent_rating_1
+,home_team_history_coach_1
+,home_team_history_league_id_1
+,away_team_history_match_date_1
+,away_team_history_is_play_home_1
+,away_team_history_is_cup_1
+,away_team_history_goal_1
+,away_team_history_opponent_goal_1
+,away_team_history_rating_1
+,away_team_history_opponent_rating_1
+,away_team_history_coach_1
+,away_team_history_league_id_1
+
+Note: all columns with "_1" at the end are all replicated up to "_10" to represent datapoints for the 10 previous games the clubs have played.
+
+Feature engineering
+===================
+categorical (one-hot encode these):
+- league_id
+- is_cup
+- home_team_coach_id
+- away_team_coach_id
+
+ideas:
+- last_10_games_undefeated (no Ls)
+- last_10_games_unstoppable (no Ds or Ls)
+- last_10_games_winless (no Ws)
+- last_10_games_league_points (Ws == 3, Ds == 1, Ls == 0)
